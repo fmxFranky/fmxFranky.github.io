@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/02/58b81dd47238e.png">
-<meta property="og:updated_time" content="2017-03-02T15:56:25.000Z">
+<meta property="og:updated_time" content="2017-03-02T15:58:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Image De-raining Using a Conditional Generative Adversarial Network">
 <meta name="twitter:description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
@@ -325,8 +325,8 @@
 <li>生成器<br>生成器将生成的去雨图片和真实的去雨图片作为输入,经过5层Conv层和Sigmoid层之后输出True或False的判断Discriminator的目标是判断出生成的图片和真实的去雨图片相比是不是人工生成的</li>
 </ul>
 <p><strong>损失函数</strong></p>
-<p>$L=L<em>E+\lambda</em>{\alpha} L_A+\lambda_p L_P$</p>
-<p>其中</p>
+<p>这里的Loss Function借鉴了Li FeiFei Team在ECCV2016上面提出的perceptual loss的概念,最终的形式见下</p>
+<p>$$ L = L<em>E + \lambda</em>{\alpha} L_A+\lambda_p L_P $$</p>
 <ul>
 <li>$L_E$是生成图像和真实去雨图像的L2损失</li>
 <li>$L_A$是对抗损失：这里的对抗损失，即与生成器一起训练一个判别器，其中判别模块的目的是为了区分开产生数据与真实数据;而生成器的目的则是为了尽量的迷惑判别器，其数学形式与原始GAN损失相似</li>

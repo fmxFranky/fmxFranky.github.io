@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/02/58b81dd47238e.png">
-<meta property="og:updated_time" content="2017-03-02T15:37:13.000Z">
+<meta property="og:updated_time" content="2017-03-02T15:40:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Image De-raining Using a Conditional Generative Adversarial Network">
 <meta name="twitter:description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
@@ -325,9 +325,7 @@
 </ul>
 <p><strong>损失函数</strong></p>
 <p>这里的Loss Function借鉴了Li FeiFei Team在ECCV2016上面提出的perceptual loss的概念,最终的形式见下:</p>
-<blockquote>
-<p>$L = L<em>E+λ</em>αL_A+λ_pL_P$</p>
-</blockquote>
+<p>$L = L<em>E + λ</em>α L_A + λ_p L_P$</p>
 <ul>
 <li>$L_E$是生成图像和真实去雨图像的L2损失</li>
 <li>$L_A$是对抗损失：这里的对抗损失，即与生成器一起训练一个判别器，其中判别模块的目的是为了区分开产生数据与真实数据;而生成器的目的则是为了尽量的迷惑判别器，其数学形式与原始GAN损失相似</li>
@@ -367,29 +365,6 @@
 
   
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
 
 
 

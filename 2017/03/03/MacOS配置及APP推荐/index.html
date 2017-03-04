@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5830caaa6.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5b0199f3d.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png">
-<meta property="og:updated_time" content="2017-03-04T06:45:30.000Z">
+<meta property="og:updated_time" content="2017-03-04T08:16:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS配置及APP推荐">
 <meta name="twitter:description" content="个人一点MacOS的使用历程,包括抹盘重装,系统命令行配置和常用软件推荐等">
@@ -329,7 +329,11 @@
 <ul>
 <li>[ ] 在App Store上面下载相应的OS(笔者选择的是MacOS Sierra的最新版),下载完成后可以在/Applications中找到</li>
 <li>[ ] 插上U盘,接下来可以选择使用Terminal安装还是用DiskMakerX安装</li>
-<li>[ ] 如若使用Terminal的话,首先要打开Disk Utility将U盘erase,格式选择”Mac Os拓展(日志式);接下来在Terminal运行以下命令:<br><code>sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction</code><br>按照提示输入管理员密码后开始等待,直到屏幕显示”Done”就OK了</li>
+<li>[ ] 如若使用Terminal的话,首先要打开Disk Utility将U盘erase,格式选择”Mac Os拓展(日志式);接下来在Terminal运行以下命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>按照提示输入管理员密码后开始等待,直到屏幕显示”Done”就OK了</p>
+<ul>
 <li>[ ] 图方便的话可以直接使用<a href="http://diskmakerx.com/" target="_blank" rel="external">DiskMaker X</a>进行MacOS启动盘的制作,打开APP之后会依次询问你安装哪个Version(目前支持10.10-10.12);是否使用/Applications里面的MacOS Sierra Installation;用哪个disk安装(注意千万要选对盘符)<br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba54132d991.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba542adc284.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba5493c5fba.png" alt=""></li>
 </ul>
 <p>最后就是紧张刺激的安装环节了!重启电脑,重启的时候按住<code>Option</code>不放,电脑会弹出来选择启动盘的界面,点<code>Install macOS Sierra</code>,然后进入界面之后先选择Disk Utility把电脑盘格式化,在选择从启动盘安装,耐心等待….大功告成!</p>
@@ -355,8 +359,46 @@
 <li>[ ] 然后开始配置Oh My Zsh.Oh My Zsh是一个根据zsh(一个更高级的bash)制作的项目.相比于传统zsh的定制Oh My Zsh上手容易而且有很多网友上传的主题,它支持命令补全,命令功能增强,智能纠错,智能跳转,历史记录查询,自定义插件(当然有很多别人写好的)等等.<br>对于MacOS,可以运行一下命令进行自动安装:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>然后设置zsh为默认bash:<br><code>chsh -s /usr/local/bin/zsh</code><br>编辑.zshrc文件可以进行主题设置,插件设置(推荐安装autojump, git),缩写设置(比如<code>py</code>=<code>python3.5</code>)等,更为详细的配置可以见这个<a href="http://macshuo.com/?p=676" target="_blank" rel="external">博客</a><br>我的MacOS Terminal环境最后是这个样子的:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png" alt=""></p>
-<p><strong>Home Brew安装</strong><br>在MacOS中,安装软件的神器当属<a href="https://brew.sh/" target="_blank" rel="external">Home Brew</a>了!它是用ruby写的是一款自由及开放源代码的软件包管理系统,用以简化MacOS系统上的软件安装过程.使用者不需要在意它在哪里下载的在哪里安装的还有相关依赖环境,因为这些Home Brew都会帮你做好,只需要短短一行代码就可以安装/卸载/管理软件了:<br>安装命令:<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+<p>然后设置zsh为默认bash:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /usr/local/bin/zsh</div></pre></td></tr></table></figure></p>
+<p>编辑~/.zshrc文件可以进行主题设置,插件设置(推荐安装autojump, git),缩写设置(比如<code>py</code>=<code>python3.5</code>)等,更为详细的配置可以见这个<a href="http://macshuo.com/?p=676" target="_blank" rel="external">博客</a><br>我的MacOS Terminal环境最后是这个样子的(zsh主题:wedisagree):<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png" alt=""></p>
+<p><strong>Home Brew安装</strong><br>在MacOS中,安装软件的神器当属<a href="https://brew.sh/" target="_blank" rel="external">Home Brew</a>了!它是用ruby写的是一款自由及开放源代码的软件包管理系统,用以简化MacOS系统上的软件安装过程.使用者不需要在意它在哪里下载的在哪里安装的还有相关依赖环境,因为这些Home Brew都会帮你做好,只需要短短一行代码就可以安装/卸载/管理软件了:<br>安装命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
+<p>安装之后就可以用<code>brew install/remove app</code>来安装/卸载软件了,非常简单<br>要说明的是Brew是用来安装那些二进制安装包的,它会帮你自动执行编译操作,但是还有一些类似App Store上面的dmg安装文件就不能用Brew安装了,这时候需要<a href="https://caskroom.github.io/" target="_blank" rel="external">Brew Cask</a>上场了!Brew Cask将众多常用软件的dmg的下载地址统一管理,我们可以像使用Brew一样使用它安装各种常用软件<br>安装命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure></p>
+<p>举个例子,我要安装可以和zsh配合的autojump还有浏览器chrome的话,可以运行这样的命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install autojump</div><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure></p>
+<p>然后等待一下就安装好了,一处只需把install替换为remove就行了<br>另外要说明的是,Brew在下载一些软件的下载速度很慢,因此推荐把cask的下载途径换成国内的替代仓库(以USTC源为例):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&apos; &gt;&gt; ~/.zshrc</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure></p>
+<p>有了以上设置,MacOS的初步配置基本差不多了,下载一些自己平常需要的软件/开发环境之后就可以愉快的使用了!</p>
+<blockquote>
+<p>笔者使用的APP推荐</p>
+<p>下面是笔者给大家推荐的一下APP</p>
+<ul>
+<li>Anaconda Python科研计算环境</li>
+<li>Maipo AppStore有下载,MacOS版微博</li>
+<li>Alfred 替代Spotlight的选择,打开软件/文件的快捷方式</li>
+<li>iStat 系统监控软件</li>
+<li>GreenVpn 翻墙软件,老牌子</li>
+<li>Office  MacOS上面的office</li>
+<li>Wechat  微信</li>
+<li>QQ     QQ</li>
+<li>FreshBack 一款自动切换壁纸的软件</li>
+<li>Inbox Gmail邮箱</li>
+<li>Thunder 迅雷下载</li>
+<li>FileZilla 可以和远程服务器进行文件传输</li>
+<li>Pycharm IntelliJ旗下的Python IDE,配合Anaconda完美</li>
+<li>Clion   IntelliJ旗下的C++ IDE</li>
+<li>WebStornm  IntelliJ旗下的网页编写IDE</li>
+<li>Skype 网络电话首选</li>
+<li>Steam 游戏平台</li>
+<li>Evernote 印象笔记</li>
+<li>ShiftIt  免费的窗口尺寸改变软件,和Moom差不多</li>
+<li>WunderList 奇妙清单,任务管理软件</li>
+<li>Android File Transfer 连接Android手机的驱动</li>
+<li>Ubersicht 一款桌面插件软件(例如在桌面壁纸上面显示时间等)</li>
+<li>Chrome Google出品的浏览器</li>
+<li>BaiduNetDisk 百度网盘</li>
+<li>NeteasyMusic 网易云音乐</li>
+<li>IINA  开源MacOS的视频播放器</li>
+<li>Atom  万能编辑器,替代Sublime Text的不二选择,后面会专门写一篇Atom的配置教程</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -368,7 +410,7 @@
         <p><span>本文标题:</span><a href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mx Feng</a></p>
         <p><span>发布时间:</span>2017-03-03, 00:04:53</p>
-        <p><span>最后更新:</span>2017-03-04, 14:45:30</p>
+        <p><span>最后更新:</span>2017-03-04, 16:16:17</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/03/MacOS配置及APP推荐/" title="MacOS配置及APP推荐">http://yoursite.com/2017/03/03/MacOS配置及APP推荐/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/03/MacOS配置及APP推荐/　　作者: Mx Feng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

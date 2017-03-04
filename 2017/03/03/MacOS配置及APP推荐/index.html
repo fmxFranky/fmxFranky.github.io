@@ -24,7 +24,11 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba54132d991.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba542adc284.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5493c5fba.png">
-<meta property="og:updated_time" content="2017-03-04T05:53:39.000Z">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba58baedf4f.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5830caaa6.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5b0199f3d.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png">
+<meta property="og:updated_time" content="2017-03-04T06:45:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS配置及APP推荐">
 <meta name="twitter:description" content="个人一点MacOS的使用历程,包括抹盘重装,系统命令行配置和常用软件推荐等">
@@ -326,16 +330,33 @@
 <li>[ ] 在App Store上面下载相应的OS(笔者选择的是MacOS Sierra的最新版),下载完成后可以在/Applications中找到</li>
 <li>[ ] 插上U盘,接下来可以选择使用Terminal安装还是用DiskMakerX安装</li>
 <li>[ ] 如若使用Terminal的话,首先要打开Disk Utility将U盘erase,格式选择”Mac Os拓展(日志式);接下来在Terminal运行以下命令:<br><code>sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction</code><br>按照提示输入管理员密码后开始等待,直到屏幕显示”Done”就OK了</li>
-<li>[ ] 图方便的话可以直接使用<a href="http://diskmakerx.com/" target="_blank" rel="external">DiskMaker X</a>进行MacOS启动盘的制作,打开APP之后会依次询问你安装哪个Version(目前支持10.10-10.12);是否使用/Applications里面的MacOS Sierra Installation;用哪个disk安装(注意千万要选对盘符)<br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba54132d991.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba542adc284.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba5493c5fba.png" alt=""></li>
+<li>[ ] 图方便的话可以直接使用<a href="http://diskmakerx.com/" target="_blank" rel="external">DiskMaker X</a>进行MacOS启动盘的制作,打开APP之后会依次询问你安装哪个Version(目前支持10.10-10.12);是否使用/Applications里面的MacOS Sierra Installation;用哪个disk安装(注意千万要选对盘符)<br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba54132d991.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba542adc284.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba5493c5fba.png" alt=""></li>
 </ul>
 <p>最后就是紧张刺激的安装环节了!重启电脑,重启的时候按住<code>Option</code>不放,电脑会弹出来选择启动盘的界面,点<code>Install macOS Sierra</code>,然后进入界面之后先选择Disk Utility把电脑盘格式化,在选择从启动盘安装,耐心等待….大功告成!</p>
 <blockquote>
 <p>初始设置</p>
 </blockquote>
 <p>安装完成之后系统会让你连接网络,确定地点,绑定Apple ID,输入主机host name(就是/Users 后面你的主文件夹的名字)等等…一系列信息填写之后便进入了新系统的界面了,在这里笔者打算分享一下自己一开始安装的,以后会一直伴随MacOS使用的几个软件和相关配置</p>
+<p><strong>系统配置</strong><br>拿到新系统,我认为有几个地方是要设置一下的</p>
 <ul>
-<li>[ ] 系统配置</li>
+<li>[ ] 触摸板设置<ul>
+<li>打开系统设置–&gt;触摸板(Trackpad)–&gt;Point \&amp; Click,设置单指点击<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba58baedf4f.png" alt=""><br>还可以点击More Gestures去设置各种其他手势的快捷操作</li>
+<li>打开系统设置–&gt;辅助功能(Accessibility)–&gt;Mouse \&amp; Trackpad,设置一下三指拖拽:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba5830caaa6.png" alt=""></li>
 </ul>
+</li>
+<li>[ ] menu-bar和dock的显示设置<br>笔者习惯在系统设置–&gt;General和Dock选项里面在设置一下dock左侧显示和自动隐藏和menu-bar的自动隐藏.这个看个人喜好了</li>
+<li>[ ] App来源设置<br>最新的MacOS Sierra在系统偏好–&gt;安全与隐私中默认已经去除了<code>允许任何来源App</code>的选项,为了允许这个操作,需要运行如下命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo spctl --master-disable</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>之后再次打开你就发现允许任何来源的选项出现了:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba5b0199f3d.png" alt=""></p>
+<p><strong>命令行设置</strong><br>虽然MacOS的界面很美观,但是该用的命令行要用啊!尤其对于程序开发人员和科研人员,他们需要的很多软件并没提供GUI安装,很多都是通过命令行安装的,为此一个好用的命令行环境还是很必要的.在这里笔者推荐<a href="https://www.iterm2.com/" target="_blank" rel="external">iTerm2</a>+<a href="http://ohmyz.sh/" target="_blank" rel="external">Oh My Zsh</a>套装,简直是神器!</p>
+<ul>
+<li>[ ] 首先在iTerm的官网(见上)上面下载APP,然后打开APP,按下<code>Command</code>+<code>,</code>可以进行自定义的设置(我只设置了字体字号和背景图片,其他设置自行摸索吧).iTerm支持在界面里面进行复制/黏贴/查找/打开连接/打开文件夹等功能,分屏功能也不错哈</li>
+<li>[ ] 然后开始配置Oh My Zsh.Oh My Zsh是一个根据zsh(一个更高级的bash)制作的项目.相比于传统zsh的定制Oh My Zsh上手容易而且有很多网友上传的主题,它支持命令补全,命令功能增强,智能纠错,智能跳转,历史记录查询,自定义插件(当然有很多别人写好的)等等.<br>对于MacOS,可以运行一下命令进行自动安装:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后设置zsh为默认bash:<br><code>chsh -s /usr/local/bin/zsh</code><br>编辑.zshrc文件可以进行主题设置,插件设置(推荐安装autojump, git),缩写设置(比如<code>py</code>=<code>python3.5</code>)等,更为详细的配置可以见这个<a href="http://macshuo.com/?p=676" target="_blank" rel="external">博客</a><br>我的MacOS Terminal环境最后是这个样子的:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png" alt=""></p>
+<p><strong>Home Brew安装</strong><br>在MacOS中,安装软件的神器当属<a href="https://brew.sh/" target="_blank" rel="external">Home Brew</a>了!它是用ruby写的是一款自由及开放源代码的软件包管理系统,用以简化MacOS系统上的软件安装过程.使用者不需要在意它在哪里下载的在哪里安装的还有相关依赖环境,因为这些Home Brew都会帮你做好,只需要短短一行代码就可以安装/卸载/管理软件了:<br>安装命令:<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
 
       
     </div>
@@ -347,7 +368,7 @@
         <p><span>本文标题:</span><a href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mx Feng</a></p>
         <p><span>发布时间:</span>2017-03-03, 00:04:53</p>
-        <p><span>最后更新:</span>2017-03-04, 13:53:39</p>
+        <p><span>最后更新:</span>2017-03-04, 14:45:30</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/03/MacOS配置及APP推荐/" title="MacOS配置及APP推荐">http://yoursite.com/2017/03/03/MacOS配置及APP推荐/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/03/MacOS配置及APP推荐/　　作者: Mx Feng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

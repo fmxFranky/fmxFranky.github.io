@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Mx Feng" />
+
+
+
+<meta name="description" content="作为一名可代码要打交道的人,一个界面美观,配置简单,功能齐全的编辑器是必须的.本文中作者向大家推荐这样一个全平台全能型编辑器: Atom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科研向Atom配置教程">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/科研向Atom配置教程/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="作为一名可代码要打交道的人,一个界面美观,配置简单,功能齐全的编辑器是必须的.本文中作者向大家推荐这样一个全平台全能型编辑器: Atom">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/05/58bc07cc03393.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/05/58bc08ab7205c.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/05/58bc0edfdfb88.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/688415/11615565/10f16456-9c65-11e5-8af4-265f01fc83a0.gif">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/10590799/18817237/876c2d84-8321-11e6-8324-f1540604c0bd.gif">
+<meta property="og:image" content="https://github.com/jeremyramin/terminal-plus/raw/master/resources/demo.gif">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/05/58bc26bb04072.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/811455/11317259/c5b9b0c2-8fdc-11e5-8f85-b7deefb525c5.gif">
+<meta property="og:image" content="http://7xpcbe.com1.z0.glb.clouddn.com/markdown-img-paste.gif">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/05/58bc3517873cd.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/06/58bc38f8340e3.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/06/58bc3bafe2fab.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/06/58bc3dadef212.png">
+<meta property="og:updated_time" content="2017-03-05T16:54:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="科研向Atom配置教程">
+<meta name="twitter:description" content="作为一名可代码要打交道的人,一个界面美观,配置简单,功能齐全的编辑器是必须的.本文中作者向大家推荐这样一个全平台全能型编辑器: Atom">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/05/58bc07cc03393.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>科研向Atom配置教程 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Mx Feng</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:fmxFranky@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/fmxFranky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Software/">Software</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图像处理/">图像处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">星垂平野阔,月涌大江流</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Mx Feng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Mx Feng</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:fmxFranky@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/fmxFranky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-科研向Atom配置教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/05/科研向Atom配置教程/" class="article-date">
+      <time datetime="2017-03-05T12:06:44.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      科研向Atom配置教程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人倒腾日记/">个人倒腾日记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Software/">Software</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>作为一名可代码要打交道的人,一个界面美观,配置简单,功能齐全的编辑器是必须的.本文中作者向大家推荐这样一个全平台全能型编辑器: <a href="https://atom.io/" target="_blank" rel="external">Atom</a></p>
+<a id="more"></a>
+<blockquote>
+<p>前言</p>
+</blockquote>
+<p>笔者是目前是一名搞科研的学生,经常进行一些代码编写和latex,markdown的文件写作,用过各种平台的各种编辑器:从Windows到Linux再到MacOS;从vim到专业IDE(e.g Pycharm/Webstorm/Clion)再到Sublime Text.用过各种编辑器之后,我还是觉得现在使用的Atom是最好的.无论是界面,功能还是使用体验上面都很完美!所以今天向大家推荐一下.不论你是科研工作者还是前段/后端亦或是作家,Atom都值得拥有!</p>
+<p><br></p>
+<blockquote>
+<p>为什么要用Atom?</p>
+</blockquote>
+<p>结合笔者在各个平台使用过各种编辑器的经历,Atom主要由以下几个优点:</p>
+<ul>
+<li>开源平台,全平台兼容<br>  相对于Sublime Text或者Pycharm这种付费软件(价格还不菲),Atom是一个Github开发的开源软件,这意味着你不光可以免费的享受编辑器的所有功能,还可以参与到软件的开发中</li>
+<li>使用插件进行功能扩展,拥有大量插件和完备的讨论社区<br>  和Sublime Text类似,Atom使用安装插件的方式进行相关高级功能的实现,而且安装插件只需要点击一下就好,不光提供界面化的设置,也提供使用json文件进行设置的方式,安装/设置/卸载软件都非常简单</li>
+<li>界面炫酷<br>  Atom所有的组成使用NodeJs编写,属于WebApp,所以无论是界面还是操作体验都非常棒.各种美化的插件更是让Atom漂亮的没话说</li>
+<li>功能齐全,一个编辑器可以满足近乎所有要求<br>  总的来说我认为比Sublime Text功能是更加齐全的,插件也更多.在各种插件的帮助下Atom可以实现绝大多数你可能需要的功能:无论是代码运行(支持所有常用语言,前提是配置好环境)还是文档编写(Latex,Markdown)亦或是网页调试(HTML,Js)都可以.查看图片/文档更是不在话下.</li>
+</ul>
+<p>总结起来的话,Atom比Vim更Vim,比Emacs更Emacs,比Sublime更Sublime!</p>
+<p>当然,功能这么强大的代价就是需要小小的忍受一下相对较慢的启动速度,不过笔者看来虽然没有Sublime快但是和Pycharm这种还是半斤八两的,所以这并不是问题!</p>
+<p><br></p>
+<blockquote>
+<p>笔者用Atom干什么?</p>
+</blockquote>
+<p>笔者主要用Atom进行Python代码的编写和运行调试还有markdown和Latex格式的文档书写.所以接下来的内容主要围绕如何配置上面提到的打开.</p>
+<blockquote>
+<p>Atom的下载安装和总览</p>
+</blockquote>
+<p><strong>下载</strong><br>我们可以直接去<a href="https://atom.io/" target="_blank" rel="external">官网</a>下载对应版本的软件包.我是MacOS用户,更为方便的方式是直接用Brew Cask:</p>
+<pre><code>brew cask install atom
+</code></pre><p><strong>总览</strong><br>引用一张官网的图片:<br><img src="https://ooo.0o0.ooo/2017/03/05/58bc07cc03393.png" alt=""><br>笔者的Atom已经配置了很多,所以就不贴一开始Atom的样子了…</p>
+<p>看一下设置:<br><img src="https://ooo.0o0.ooo/2017/03/05/58bc08ab7205c.png" alt=""><br>其中<code>Core</code>是核心设置(主要是关于启动一类的);<code>Editor</code>是编辑设置(字体,段落,缩进等);<code>Keybindings</code>是快捷键总览(不在这里设置);<code>Packages</code>是包管理(后面下载的插件和系统自带的都在这里可以找到);<code>Themes</code>是主题设置(Atom分为颜色配置和UI配置);<code>Updates</code>是软件/包的更新设置;<code>Install</code>相当于Atom插件市场</p>
+<p>安装之后可以使用图标或者命令行的方式打开文件和文件夹</p>
+<p>话不多说,里面的设置可以自己看一下然后根据喜好进行设置,接下来主要记录一下笔者Atom里面安装的packages和相应配置<br><br></p>
+<blockquote>
+<p>基本配置</p>
+</blockquote>
+<p>这里主要是提供一些方便码字的插件和我喜欢的主题</p>
+<ul>
+<li>atom-beautify 一个让代码显示美观的插件,支持各种编程语言.快捷键<code>ctrl</code>+<code>alt</code>+’<code>b</code></li>
+<li>language-xxx 你用到什么语言就一定要把相应的language-xxx安装了,主要是提供相应的颜色主题</li>
+<li>autocomplete-xxx(顺序可能xxx在前) 代码提示补全</li>
+<li>auto系列 智能xxx,看个人需要</li>
+<li>Atom Material UI 一款Material Design风格的UI主题</li>
+<li>Atom Material Syntax  一款Material Design风格的编辑显示主题</li>
+<li>file-icons 各种文件的显示图标<br>上面三个设置好了之后我的界面是这个样子的:<br><img src="https://ooo.0o0.ooo/2017/03/05/58bc0edfdfb88.png" alt=""><br>怎么样,很炫酷有没有?</li>
+<li>Activate Power Mode 装逼插件我只服这个,它可以让你打字的时候屏幕晃动/光标有粒子散射/屏幕上显示打字的Combo数.<br><img src="https://cloud.githubusercontent.com/assets/688415/11615565/10f16456-9c65-11e5-8af4-265f01fc83a0.gif" alt="activate-power-mode-0 4 0"><br><img src="https://cloud.githubusercontent.com/assets/10590799/18817237/876c2d84-8321-11e6-8324-f1540604c0bd.gif" alt="activate-power-mode-combo"><br>更多设置请自行摸索</li>
+<li>atom-clock 右下角显示时间</li>
+<li>platforio-ide-terminal 在atom内使用terminal,快捷键<code>cmd</code>+<code>shift</code>+<code>t</code>/<code>x</code>打开/关闭<br><img src="https://github.com/jeremyramin/terminal-plus/raw/master/resources/demo.gif" alt="demo"></li>
+<li>script 运行各种程序的插件(要配置好环境,后面会说关于Python的配置)</li>
+<li>git-controll+git-plus 实现对代码的管理功能,比命令行敲git xxx 便捷</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>Markdown环境配置</p>
+</blockquote>
+<p>现在使用markdown写作必不可少了,不论是写博客还是个人记录都很方便.笔者主要进行了以下插件的安装和设置,这些插件在我看来都是必须装的</p>
+<ul>
+<li>language-markdown markdown的语言支持,个人感觉没什么需要特别设置的</li>
+<li>markdown-preview-plus 提供同一个界面下的markdown文件预览.快捷键是<code>cmd</code>+<code>shift</code>+<code>m</code>,支持缩放,用github风格显示,使用pandoc进行文件格式转换(需要在设置里面设置pandoc的路径)<br><img src="https://ooo.0o0.ooo/2017/03/05/58bc26bb04072.png" alt=""></li>
+<li>markdown-preview-plus-opener 支持打开md文件是自动生成预览,并且切换md文件时会关掉前一个预览并显示新的预览</li>
+<li>markdown-preview-enhance 支持更好的预览显示</li>
+<li>markdown-scroll-sync 提供markdown代码到文章的位置定位:点击字段右侧的预览就会跳转到相应位置<br><img src="https://cloud.githubusercontent.com/assets/811455/11317259/c5b9b0c2-8fdc-11e5-8f85-b7deefb525c5.gif" alt="mkdn-scrl-sync"></li>
+<li>linter-markdown 语法纠错</li>
+<li>language-gfm-enhanced 支持markdown预览中的数学公式的渲染</li>
+<li>markdown-toc 生成markdown的目录导航</li>
+<li>tool-bar-markdown-writer 类似WordPress,知乎那种的工具栏,通过点击相应图标就可以插入相应格式</li>
+<li>markdown-img-paste 这个是一个很有用的东西,支持吧剪贴板的图片先上传到图床上面然后将生成的连接插入到文档里面.快捷键<code>ctrl</code>+<code>shift</code>+<code>v</code><br>  我们知道很多时候markdown的图片都是通过网址插入的,这样在哪里都可以看到(相比于本地插入很方便).这个插件就是做这个的.一般博客上面会推荐使用markdown-assistant和qiniu-uploader通过七牛图床进行这个操作,但是这样需要你现在七牛网站上面申请账户然后再把网站的秘钥绑定到插件的配置文件里面,费时费力不说,还经常会出现错误,反正笔者的mac一直没成功过.<br>  我推荐的这个插件的好处它选择的图床是<a href="https://sm.ms/" target="_blank" rel="external">SM图床</a>,这个图床不需要绑定账号获取秘钥一类的操作,直接就可以用了,像下面这样:<br>  <img src="http://7xpcbe.com1.z0.glb.clouddn.com/markdown-img-paste.gif" alt=""><br>  这个插件也支持七牛</li>
+<li>markdown-themeable-pdf 支持自定义的md到pdf的文件生成,快捷键<code>ctrl</code>+<code>shift</code>+<code>e</code></li>
+<li>pdf-view 提供pdf文件的预览.问题在于我这里不能选中内容…不知道是不是我自己的问题</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>Latex环境配置</p>
+</blockquote>
+<p>科研写作一般使用Latex的,在MacOS中,我们需要先安装一下mac版的texlive:<a href="http://www.tug.org/mactex/index.html" target="_blank" rel="external">MacTex</a></p>
+<pre><code>brew cask install mactex
+</code></pre><p>然后安装下面的插件:</p>
+<ul>
+<li>latex 编译源,记得在设置中填上你的Tex Path,比如mac中就是/Library/TeX/texbin.然后勾上autosave.使用的快捷键<code>ctrl</code>+<code>shift</code>+<code>b</code><br>这个插件同时可以定义编译成功之后在哪里使用什么pdf阅读器显示编译成功的pdf文件,支持Skim/SumatraPDF/Okular/Zathura等显示软件,或者自己设置其他的.</li>
+<li>language-latex 语法器</li>
+<li>language-completions 符号替代,比如你输入<code>\alpha</code>,他就会再加在你的md文件中显示<code>α</code></li>
+<li>atom-latex 编译和显示pdf的插件<br>  如果你需要左边源代码右边pdf的话需要先把latex插件里面的Opener选项设置成pdf-view,然后在atom-latex设置里面把Preview PDF after building process的选项选为Do nothing</li>
+<li>latexer 一个方便添加参考文献的插件(还没用过..)</li>
+</ul>
+<p>最后附上一张效果图:<br><img src="https://ooo.0o0.ooo/2017/03/05/58bc3517873cd.png" alt=""></p>
+<p><br></p>
+<blockquote>
+<p>Python环境配置</p>
+</blockquote>
+<p>笔者大部分时间使用Python跑程序,所以这里记录一下Python环境的配置</p>
+<p>用<a href="https://www.continuum.io/" target="_blank" rel="external">Anaconda</a>进行Python科学计算是一个不错的选择,这里关于Anaconda的安装不在啰嗦,假定你已经把Anaconda安装好了.<br>然后推荐一下这几个插件</p>
+<ul>
+<li>autocomplete-python 变量/函数/语法自动补全,记得填Python路径</li>
+<li>language-python Python语法支持</li>
+<li>python-tools 必装!提供IDE级别的语法支持:比如显示函数用法,返回变量的定义处,记得在设置里面填好你的Python路径</li>
+<li>python-indent pep8形式的缩进显示</li>
+<li>python-autopep8 将你的Python代码格式化为PEP8规范</li>
+<li>python-isort 自动排序import</li>
+<li>linter-flake8 Python语法纠错</li>
+</ul>
+<p>安装好之后就像这样:<br><img src="https://ooo.0o0.ooo/2017/03/06/58bc38f8340e3.png" alt=""></p>
+<p>接下来设置在atom内运行Python,当然你也可以打开atom内的terminal(见前面)然后在terminal里面调用py文件.</p>
+<p>插件script的快捷键是<code>cmd</code>+<code>i</code>直接运行文件,这个方式使用的是系统默认的python(/usr/bin/python).如果想更改默认调用的Python环境可以在~/.atom/lib/grammars.coffee 文件里面找到’Python’字段,然后修改下面的相应路径即可.如果你一直只用你自己安装的Python环境推荐这样做.</p>
+<p>script支持设置参数文件进行不同环境的调用,如果你有多个环境,需要这样:打开Atom的控制台(快捷键<code>cmd</code>+<code>shift</code>+<code>p</code>),在里面输入script run options或者直接使用快捷键<code>cmd</code>+<code>shift</code>+<code>i</code>进入到参数设置页面:<br><img src="https://ooo.0o0.ooo/2017/03/06/58bc3bafe2fab.png" alt=""><br>第二行填’python’,最后一行填Python路径,要包含Python执行器的名字,比如’~/anaconda3/bin/python3’,最后点击保存,定义好名字就ok了.如此你可以为你可能用到的Python版本都写一个这样的profile.<br>运行的时候可以在控制台里面输入script run with profile,快捷键<code>cmd</code>+<code>shift</code>+<code>k</code>,然后选择相应的配置,笔者是这样的:<br><img src="https://ooo.0o0.ooo/2017/03/06/58bc3dadef212.png" alt=""><br>可以看到结果是在下面的,和pycharm是一样的.但是貌似不支持标准输入,注意一下</p>
+<p><em>p.s.最近遇到的问题在于这个profile不是永久的,重启就没了,目前在想办法怎么一直保持</em><br><br></p>
+<blockquote>
+<p>Hexo环境配置</p>
+</blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>是用来进行静态博客生成的一个工具,现在的流行做法是将Hexo和GitHub Pages结合起来用于博客托管,这个内容以后有时间单开博客记录,这里只说一下推荐安装的插件:atom-hexo和hexo-front-matter.前者是可以在控制台执行各种hexo的常见操作;后者可以生产格式规范的post表头(用hexo写博客是将md文件进行渲染,需要在开头写一些关于这个post的信息)<br>不过控制台的hexo操作比较慢,不如在terminal里面敲命令…</p>
+<p><br></p>
+<blockquote>
+<p>HTML</p>
+</blockquote>
+<p>按理说这个也是一个大头,不过笔者并不是从事前端的人,所这方面的插件基本不使用,在这里只推荐一下auto-系列和language-系列,还有一个就是html-preview,用来预览写好的网页.如果后面经常用它写网页的话会把这部分好好完善一下.</p>
+<p><br></p>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p>笔者主要使用Python写代码,markdown写博客,latex写论文,atom可以同时兼顾三个方面的编辑,因此强烈推荐给和我有相同情况的人!</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">
+                    DehazeNet,An End-to-End System for Single Image Haze Removal
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"科研向Atom配置教程　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/" title="下一篇: DehazeNet,An End-to-End System for Single Image Haze Removal">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/科研向Atom配置教程/">科研向Atom配置教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">DehazeNet,An End-to-End System for Single Image Haze Removal</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/">Image De-raining Using a Conditional Generative Adversarial Network</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017 Mx Feng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

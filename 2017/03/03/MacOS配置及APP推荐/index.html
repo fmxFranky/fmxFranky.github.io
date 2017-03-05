@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5830caaa6.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba5b0199f3d.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png">
-<meta property="og:updated_time" content="2017-03-04T08:16:17.000Z">
+<meta property="og:updated_time" content="2017-03-05T12:08:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS配置及APP推荐">
 <meta name="twitter:description" content="个人一点MacOS的使用历程,包括抹盘重装,系统命令行配置和常用软件推荐等">
@@ -146,13 +146,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -264,7 +264,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap"><article id="post-MacOS配置及APP推荐" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -310,7 +310,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>个人一点MacOS的使用历程,包括抹盘重装,系统命令行配置和常用软件推荐等<br><a id="more"></a></p>
+        <p>个人一点MacOS的使用历程,包括抹盘重装,系统命令行配置和常用软件推荐等</p>
+<a id="more"></a>
 <blockquote>
 <p>前言</p>
 </blockquote>
@@ -329,10 +330,10 @@
 <ul>
 <li>[ ] 在App Store上面下载相应的OS(笔者选择的是MacOS Sierra的最新版),下载完成后可以在/Applications中找到</li>
 <li>[ ] 插上U盘,接下来可以选择使用Terminal安装还是用DiskMakerX安装</li>
-<li>[ ] 如若使用Terminal的话,首先要打开Disk Utility将U盘erase,格式选择”Mac Os拓展(日志式);接下来在Terminal运行以下命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction</div></pre></td></tr></table></figure>
-</li>
+<li>[ ] 如若使用Terminal的话,首先要打开Disk Utility将U盘erase,格式选择”Mac Os拓展(日志式);接下来在Terminal运行以下命令:</li>
 </ul>
-<p>按照提示输入管理员密码后开始等待,直到屏幕显示”Done”就OK了</p>
+<pre><code>sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction
+</code></pre><p>按照提示输入管理员密码后开始等待,直到屏幕显示”Done”就OK了</p>
 <ul>
 <li>[ ] 图方便的话可以直接使用<a href="http://diskmakerx.com/" target="_blank" rel="external">DiskMaker X</a>进行MacOS启动盘的制作,打开APP之后会依次询问你安装哪个Version(目前支持10.10-10.12);是否使用/Applications里面的MacOS Sierra Installation;用哪个disk安装(注意千万要选对盘符)<br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba54132d991.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba542adc284.png" alt=""><br>  <br><br>  <img src="https://ooo.0o0.ooo/2017/03/04/58ba5493c5fba.png" alt=""></li>
 </ul>
@@ -344,31 +345,38 @@
 <p><strong>系统配置</strong><br>拿到新系统,我认为有几个地方是要设置一下的</p>
 <ul>
 <li>[ ] 触摸板设置<ul>
-<li>打开系统设置–&gt;触摸板(Trackpad)–&gt;Point \&amp; Click,设置单指点击<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba58baedf4f.png" alt=""><br>还可以点击More Gestures去设置各种其他手势的快捷操作</li>
-<li>打开系统设置–&gt;辅助功能(Accessibility)–&gt;Mouse \&amp; Trackpad,设置一下三指拖拽:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba5830caaa6.png" alt=""></li>
+<li>打开系统设置–&gt;触摸板(Trackpad)–&gt;Point &amp; Click,设置单指点击<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba58baedf4f.png" alt=""><br>还可以点击More Gestures去设置各种其他手势的快捷操作</li>
+<li>打开系统设置–&gt;辅助功能(Accessibility)–&gt;Mouse &amp; Trackpad,设置一下三指拖拽:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba5830caaa6.png" alt=""></li>
 </ul>
 </li>
 <li>[ ] menu-bar和dock的显示设置<br>笔者习惯在系统设置–&gt;General和Dock选项里面在设置一下dock左侧显示和自动隐藏和menu-bar的自动隐藏.这个看个人喜好了</li>
-<li>[ ] App来源设置<br>最新的MacOS Sierra在系统偏好–&gt;安全与隐私中默认已经去除了<code>允许任何来源App</code>的选项,为了允许这个操作,需要运行如下命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo spctl --master-disable</div></pre></td></tr></table></figure>
-</li>
+<li>[ ] App来源设置<br>最新的MacOS Sierra在系统偏好–&gt;安全与隐私中默认已经去除了<code>允许任何来源App</code>的选项,为了允许这个操作,需要运行如下命令<pre><code>`sudo spctl --master-disable`
+</code></pre>之后再次打开你就发现允许任何来源的选项出现了:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba5b0199f3d.png" alt=""></li>
 </ul>
-<p>之后再次打开你就发现允许任何来源的选项出现了:<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba5b0199f3d.png" alt=""></p>
 <p><strong>命令行设置</strong><br>虽然MacOS的界面很美观,但是该用的命令行要用啊!尤其对于程序开发人员和科研人员,他们需要的很多软件并没提供GUI安装,很多都是通过命令行安装的,为此一个好用的命令行环境还是很必要的.在这里笔者推荐<a href="https://www.iterm2.com/" target="_blank" rel="external">iTerm2</a>+<a href="http://ohmyz.sh/" target="_blank" rel="external">Oh My Zsh</a>套装,简直是神器!</p>
 <ul>
 <li>[ ] 首先在iTerm的官网(见上)上面下载APP,然后打开APP,按下<code>Command</code>+<code>,</code>可以进行自定义的设置(我只设置了字体字号和背景图片,其他设置自行摸索吧).iTerm支持在界面里面进行复制/黏贴/查找/打开连接/打开文件夹等功能,分屏功能也不错哈</li>
-<li>[ ] 然后开始配置Oh My Zsh.Oh My Zsh是一个根据zsh(一个更高级的bash)制作的项目.相比于传统zsh的定制Oh My Zsh上手容易而且有很多网友上传的主题,它支持命令补全,命令功能增强,智能纠错,智能跳转,历史记录查询,自定义插件(当然有很多别人写好的)等等.<br>对于MacOS,可以运行一下命令进行自动安装:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-</li>
+<li>[ ] 然后开始配置Oh My Zsh.Oh My Zsh是一个根据zsh(一个更高级的bash)制作的项目.相比于传统zsh的定制Oh My Zsh上手容易而且有很多网友上传的主题,它支持命令补全,命令功能增强,智能纠错,智能跳转,历史记录查询,自定义插件(当然有很多别人写好的)等等.<br>对于MacOS,可以运行一下命令进行自动安装:</li>
 </ul>
-<p>然后设置zsh为默认bash:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /usr/local/bin/zsh</div></pre></td></tr></table></figure></p>
-<p>编辑~/.zshrc文件可以进行主题设置,插件设置(推荐安装autojump, git),缩写设置(比如<code>py</code>=<code>python3.5</code>)等,更为详细的配置可以见这个<a href="http://macshuo.com/?p=676" target="_blank" rel="external">博客</a><br>我的MacOS Terminal环境最后是这个样子的(zsh主题:wedisagree):<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png" alt=""></p>
-<p><strong>Home Brew安装</strong><br>在MacOS中,安装软件的神器当属<a href="https://brew.sh/" target="_blank" rel="external">Home Brew</a>了!它是用ruby写的是一款自由及开放源代码的软件包管理系统,用以简化MacOS系统上的软件安装过程.使用者不需要在意它在哪里下载的在哪里安装的还有相关依赖环境,因为这些Home Brew都会帮你做好,只需要短短一行代码就可以安装/卸载/管理软件了:<br>安装命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
-<p>安装之后就可以用<code>brew install/remove app</code>来安装/卸载软件了,非常简单<br>要说明的是Brew是用来安装那些二进制安装包的,它会帮你自动执行编译操作,但是还有一些类似App Store上面的dmg安装文件就不能用Brew安装了,这时候需要<a href="https://caskroom.github.io/" target="_blank" rel="external">Brew Cask</a>上场了!Brew Cask将众多常用软件的dmg的下载地址统一管理,我们可以像使用Brew一样使用它安装各种常用软件<br>安装命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure></p>
-<p>举个例子,我要安装可以和zsh配合的autojump还有浏览器chrome的话,可以运行这样的命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install autojump</div><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure></p>
-<p>然后等待一下就安装好了,一处只需把install替换为remove就行了<br>另外要说明的是,Brew在下载一些软件的下载速度很慢,因此推荐把cask的下载途径换成国内的替代仓库(以USTC源为例):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&apos; &gt;&gt; ~/.zshrc</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure></p>
-<p>有了以上设置,MacOS的初步配置基本差不多了,下载一些自己平常需要的软件/开发环境之后就可以愉快的使用了!</p>
+<pre><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+</code></pre><p>然后设置zsh为默认bash:</p>
+<pre><code>chsh -s /usr/local/bin/zsh
+</code></pre><p>编辑~/.zshrc文件可以进行主题设置,插件设置(推荐安装autojump, git),缩写设置(比如<code>py</code>=<code>python3.5</code>)等,更为详细的配置可以见这个<a href="http://macshuo.com/?p=676" target="_blank" rel="external">博客</a><br>我的MacOS Terminal环境最后是这个样子的(zsh主题:wedisagree):<br><img src="https://ooo.0o0.ooo/2017/03/04/58ba60f42ce98.png" alt=""></p>
+<p><strong>Home Brew安装</strong><br>在MacOS中,安装软件的神器当属<a href="https://brew.sh/" target="_blank" rel="external">Home Brew</a>了!它是用ruby写的是一款自由及开放源代码的软件包管理系统,用以简化MacOS系统上的软件安装过程.使用者不需要在意它在哪里下载的在哪里安装的还有相关依赖环境,因为这些Home Brew都会帮你做好,只需要短短一行代码就可以安装/卸载/管理软件了:<br>安装命令:</p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><p>安装之后就可以用<code>brew install/remove app</code>来安装/卸载软件了,非常简单<br>要说明的是Brew是用来安装那些二进制安装包的,它会帮你自动执行编译操作,但是还有一些类似App Store上面的dmg安装文件就不能用Brew安装了,这时候需要<a href="https://caskroom.github.io/" target="_blank" rel="external">Brew Cask</a>上场了!Brew Cask将众多常用软件的dmg的下载地址统一管理,我们可以像使用Brew一样使用它安装各种常用软件<br>安装命令:</p>
+<pre><code>brew tap caskroom/cask
+</code></pre><p>举个例子,我要安装可以和zsh配合的autojump还有浏览器chrome的话,可以运行这样的命令:</p>
+<pre><code>brew install autojump
+brew cask install google-chrome
+</code></pre><p>然后等待一下就安装好了,一处只需把install替换为remove就行了<br>另外要说明的是,Brew在下载一些软件的下载速度很慢,因此推荐把cask的下载途径换成国内的替代仓库(以USTC源为例):</p>
+<pre><code>echo &apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&apos; &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre><p>有了以上设置,MacOS的初步配置基本差不多了,下载一些自己平常需要的软件/开发环境之后就可以愉快的使用了!</p>
 <blockquote>
 <p>笔者使用的APP推荐</p>
 <p>下面是笔者给大家推荐的一下APP</p>
+</blockquote>
 <ul>
 <li>Anaconda Python科研计算环境</li>
 <li>Maipo AppStore有下载,MacOS版微博</li>
@@ -398,7 +406,6 @@
 <li>IINA  开源MacOS的视频播放器</li>
 <li>Atom  万能编辑器,替代Sublime Text的不二选择,后面会专门写一篇Atom的配置教程</li>
 </ul>
-</blockquote>
 
       
     </div>
@@ -406,21 +413,6 @@
   </div>
   
     
-    <div class="copyright">
-        <p><span>Title:</span><a href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Mx Feng</a></p>
-        <p><span>Created:</span>2017-03-03, 00:04:53</p>
-        <p><span>Updated:</span>2017-03-04, 16:16:17</p>
-        <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/03/03/MacOS配置及APP推荐/" title="MacOS配置及APP推荐">http://yoursite.com/2017/03/03/MacOS配置及APP推荐/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/03/03/MacOS配置及APP推荐/　　By Mx Feng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
@@ -479,21 +471,21 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/" title="Pre: Single Image Dehazing via Multi-scale Convolutional Neural Networks">
+            <a href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/" title="上一篇: Single Image Dehazing via Multi-scale Convolutional Neural Networks">
                 <i class="fa fa-angle-left"></i>
             </a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/" title="Next: Image De-raining Using a Conditional Generative Adversarial Network">
+            <a href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/" title="下一篇: Image De-raining Using a Conditional Generative Adversarial Network">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">DehazeNet,An End-to-End System for Single Image Haze Removal</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/">Image De-raining Using a Conditional Generative Adversarial Network</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/科研向Atom配置教程/">科研向Atom配置教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">DehazeNet,An End-to-End System for Single Image Haze Removal</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/">Image De-raining Using a Conditional Generative Adversarial Network</a></li></ul>
 
 
 
@@ -510,14 +502,14 @@
                 2017 Mx Feng
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -526,7 +518,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -580,9 +572,9 @@ MathJax.Hub.Queue(function() {
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

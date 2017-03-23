@@ -15,38 +15,17 @@
 
 
 
-<meta name="description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主
-
-一些要提前注意的点
-
-
-一个好的习惯是将一些常用的tf中已经有的函数重新封装一遍,这种封装主要体现在变量定义和操作定义上面.其好处在于将函数的参数变少
-对于一些常用的conv和deconv操作,一定要弄清楚NHWC的参数值,避免出错
-定义变量一定要">
+<meta name="description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow学习笔记-1">
 <meta property="og:url" content="http://yoursite.com/2017/03/23/TensorFlow学习笔记-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主
-
-一些要提前注意的点
-
-
-一个好的习惯是将一些常用的tf中已经有的函数重新封装一遍,这种封装主要体现在变量定义和操作定义上面.其好处在于将函数的参数变少
-对于一些常用的conv和deconv操作,一定要弄清楚NHWC的参数值,避免出错
-定义变量一定要">
+<meta property="og:description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/23/58d3817630994.png">
-<meta property="og:updated_time" content="2017-03-23T09:18:15.000Z">
+<meta property="og:updated_time" content="2017-03-23T09:30:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow学习笔记-1">
-<meta name="twitter:description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主
-
-一些要提前注意的点
-
-
-一个好的习惯是将一些常用的tf中已经有的函数重新封装一遍,这种封装主要体现在变量定义和操作定义上面.其好处在于将函数的参数变少
-对于一些常用的conv和deconv操作,一定要弄清楚NHWC的参数值,避免出错
-定义变量一定要">
+<meta name="twitter:description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/23/58d3817630994.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -326,6 +305,7 @@
       
           
         <p>本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主</p>
+<a id="more"></a>
 <blockquote>
 <p>一些要提前注意的点</p>
 </blockquote>

@@ -14,16 +14,40 @@
 <meta name="author" content="Mx Feng" />
 
 
-    
-    
+
+<meta name="description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主
+
+一些要提前注意的点
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+一个好的习惯是将一些常用的tf中已经有的函数重新封装一遍,这种封装主要体现在变量定义和操作定义上面.其好处在于将函数的参数变少
+对于一些常用的conv和deconv操作,一定要弄清楚NHWC的参数值,避免出错
+定义变量一定要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorFlow学习笔记-1">
+<meta property="og:url" content="http://yoursite.com/2017/03/23/TensorFlow学习笔记-1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主
+
+一些要提前注意的点
+
+
+一个好的习惯是将一些常用的tf中已经有的函数重新封装一遍,这种封装主要体现在变量定义和操作定义上面.其好处在于将函数的参数变少
+对于一些常用的conv和deconv操作,一定要弄清楚NHWC的参数值,避免出错
+定义变量一定要">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/23/58d3817630994.png">
+<meta property="og:updated_time" content="2017-03-23T09:18:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="TensorFlow学习笔记-1">
+<meta name="twitter:description" content="本文为自己看别人写的tf代码时的总结,希望以后会用到.第一部分主要是关于conv layer和变量定义还有BN trick的相关总结,主要以代码为主
+
+一些要提前注意的点
+
+
+一个好的习惯是将一些常用的tf中已经有的函数重新封装一遍,这种封装主要体现在变量定义和操作定义上面.其好处在于将函数的参数变少
+对于一些常用的conv和deconv操作,一定要弄清楚NHWC的参数值,避免出错
+定义变量一定要">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/23/58d3817630994.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,13 +75,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo</title>
+<title>TensorFlow学习笔记-1 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +88,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -259,9 +281,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-TensorFlow学习笔记-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-TensorFlow学习笔记-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/03/23/TensorFlow学习笔记-1/" class="article-date">
@@ -279,12 +299,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/23/TensorFlow学习笔记-1/">TensorFlow学习笔记-1</a>
+    <h1 class="article-title" itemprop="name">
+      TensorFlow学习笔记-1
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -347,377 +382,81 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-科研向Atom配置教程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/05/科研向Atom配置教程/" class="article-date">
-      <time datetime="2017-03-05T12:06:44.000Z" itemprop="datePublished">2017-03-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/05/科研向Atom配置教程/">科研向Atom配置教程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>作为一名和代码要打交道的人,一个界面美观,配置简单,功能齐全的编辑器是必须的.本文中作者向大家推荐这样一个全平台全能型编辑器: <a href="https://atom.io/">Atom</a></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/个人倒腾日记/">个人倒腾日记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Software/">Software</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/03/05/科研向Atom配置教程/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/" class="article-date">
-      <time datetime="2017-03-04T15:53:21.000Z" itemprop="datePublished">2017-03-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">DehazeNet,An End-to-End System for Single Image Haze Removal</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文是一篇利用含有可解释卷积核的多尺度卷积神经网络(DehazeNet)进行图像去雾的paper: <a href="https://arxiv.org/abs/1601.07661">DehazeNet: An End-to-End System for Single Image Haze Removal</a>的笔记<br>之前也有一片利用多尺度CNN解决去雾的文章的笔记,见我之前的博客<a href="https://fmxfranky.github.io/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/阅读笔记/">阅读笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图像处理/">图像处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/" class="article-date">
-      <time datetime="2017-03-04T13:07:59.000Z" itemprop="datePublished">2017-03-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/05/科研向Atom配置教程/">
+                    科研向Atom配置教程
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a>
-    </h1>
-  
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文是一篇利用多尺度卷积神经网络(Multi-scale CNN)进行图像去雾的paper <a href="https://sites.google.com/site/renwenqi888/research/dehazing/mscnndehazing">Single Image\ Dehazing via Multi-scale Convolutional Neural Networks</a>的笔记</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/阅读笔记/">阅读笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图像处理/">图像处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
 
 
-
-
-
-
-
-
-  
-    <article id="post-MacOS配置及APP推荐" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/03/MacOS配置及APP推荐/" class="article-date">
-      <time datetime="2017-03-02T16:04:53.000Z" itemprop="datePublished">2017-03-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+<div class="share">
     
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"TensorFlow学习笔记-1　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
-      <header class="article-header">
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>个人一点MacOS的使用历程,包括抹盘重装,系统命令行配置和常用软件推荐等</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/个人倒腾日记/">个人倒腾日记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Software/">Software</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/03/03/MacOS配置及APP推荐/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/" class="article-date">
-      <time datetime="2017-03-02T12:31:28.000Z" itemprop="datePublished">2017-03-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/">Image De-raining Using a Conditional Generative Adversarial Network</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper <a href="https://arxiv.org/abs/1701.05957">Image Deraining Using a Conditional Generative Adversarial Network</a>的笔记</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/阅读笔记/">阅读笔记</a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/05/科研向Atom配置教程/" title="下一篇: 科研向Atom配置教程">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图像处理/">图像处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/23/TensorFlow学习笔记-1/">TensorFlow学习笔记-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/科研向Atom配置教程/">科研向Atom配置教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">DehazeNet,An End-to-End System for Single Image Haze Removal</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/">Image De-raining Using a Conditional Generative Adversarial Network</a></li></ul>
 
 
 
 
-
-
-
-
-
-  
-  
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -771,10 +510,6 @@
         })
     </script>
 
-
-    
-
-     
 
 
 

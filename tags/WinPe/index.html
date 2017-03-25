@@ -15,19 +15,12 @@
 
 
 
-<meta name="description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Image De-raining Using a Conditional Generative Adversarial Network">
-<meta property="og:url" content="http://yoursite.com/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/WinPe/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/02/58b81dd47238e.png">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/03/58b8418c043e4.png">
-<meta property="og:updated_time" content="2017-03-04T15:31:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Image De-raining Using a Conditional Generative Adversarial Network">
-<meta name="twitter:description" content="本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper Image Deraining Using a Conditional Generative Adversarial Network的笔记">
-<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/02/58b81dd47238e.png">
+<meta name="twitter:title" content="Hexo">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +52,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Image De-raining Using a Conditional Generative Adversarial Network | Hexo</title>
+<title>Tag: WinPe | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -69,9 +62,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -261,182 +254,60 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/" class="article-date">
-      <time datetime="2017-03-02T12:31:28.000Z" itemprop="datePublished">2017-03-02</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/03/25/用WinPe没有管理员权限的问题/" class="archive-article-date">
+      <time datetime="2017-03-25T05:58:34.000Z" itemprop="datePublished">03-25</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Image De-raining Using a Conditional Generative Adversarial Network
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/03/25/用WinPe没有管理员权限的问题/">用WinPe没有管理员权限的问题</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/阅读笔记/">阅读笔记</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图像处理/">图像处理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>本文是一篇利用对坑生成网络(GANs)进行图像去雨的paper <a href="https://arxiv.org/abs/1701.05957" target="_blank" rel="external">Image Deraining Using a Conditional Generative Adversarial Network</a>的笔记</p>
-<a id="more"></a>
-<blockquote>
-<p>介绍</p>
-</blockquote>
-<p>雨天图像含有大量雨水,这对图像质量影响很大.传统图像去雨的思路是将图像$x$拆分成不含雨滴的高频分量$y$和雨滴构成的低频分量$w$:</p>
-<p>$x=y+w$</p>
-<p>由此产生的带有不同先验的各种方法都是在想办法进行合理拆分<br>这篇paper的思路是利用最近大行其道的神经网络对坑生成网络GANs进行$y$的生成</p>
-<p><br></p>
-<blockquote>
-<p>核心</p>
-</blockquote>
-<p><strong>用GAN的原因</strong></p>
-<p>GAN大行其道而且在图像处理领域非常成功</p>
-<p><strong>神经网络的结构</strong></p>
-<p><img src="https://ooo.0o0.ooo/2017/03/02/58b81dd47238e.png" alt="ID-CGAN"></p>
-<ul>
-<li>整体结构:<br>这个神经网络是经典的GAN,它由生成器(Generator)和判别器(Discriminator)组成;生成器给定原始图像生成去雨之后的图像,而判别器用来判别生成的图像和原始图像是否相像,G和D进行零和博弈,网络的权重在这个过程中被训练</li>
-<li>判别器<br>判别器给定原始图像,然后经过了一个4+1+4+1的对称的ResNet(所谓”对称”就是有一个Conv层就会在后面有一个相应的DeConv层保持shape不变)最后和原始图像相加并进行Tanh处理就可以得到去雨图像,Generator的目标是尽可能生成真实的去雨图像:这个一方面是去雨程度,另一方面是和原图像在细节上面没有差别</li>
-<li>生成器<br>生成器将生成的去雨图片和真实的去雨图片作为输入,经过5层Conv层和Sigmoid层之后输出True或False的判断Discriminator的目标是判断出生成的图片和真实的去雨图片相比是不是人工生成的</li>
-</ul>
-<p><strong>损失函数</strong></p>
-<p>这里的Loss Function借鉴了Li FeiFei Team在ECCV2016上面提出的perceptual loss的概念,最终的形式见下</p>
-<p><img src="https://ooo.0o0.ooo/2017/03/03/58b8418c043e4.png" alt=""></p>
-<ul>
-<li>$L_E$是生成图像和真实去雨图像的L2损失</li>
-<li>$L_A$是对抗损失：这里的对抗损失，即与生成器一起训练一个判别器，其中判别模块的目的是为了区分开产生数据与真实数据;而生成器的目的则是为了尽量的迷惑判别器，其数学形式与原始GAN损失相似</li>
-<li>$L_P$是perceptual loss,即特征空间损失:它指生成图片和真实图片在一个新的比较器网络(这里选的是VGG16)里面的某一层的两者的特征图(feature map)的差异性</li>
-</ul>
-<p><strong>作者做了什么</strong></p>
-<ul>
-<li>提出了ID-CGAN的模型</li>
-<li>比较了$λ_α$和$λ_p$在退化情况下模型的效果</li>
-<li>比较了ID_CGAN和传统物理/计算机去雨方法的效果</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>总结</p>
-</blockquote>
-<p>这篇paper的思路是利用原始图像作为输入,经过GANs输出一个处理后的图像.和传统GANs的不同之处在于将噪声分布替换为图像,网络的好处在于:</p>
-<ul>
-<li>解答了困惑我很长时间关于GANs如何实现img2img的问题,这提示我后面做DhGANs的时候可以借鉴这种网络的结构,而且我预想直接copy也许都没有问题</li>
-<li>这种网络没有涉及明显的物理模型/方法,和传统基于物理/计算机先验的方法相比,GANs可以自己学习img到img的映射方法,如果DhGANs可行的话可以通过它提取的特征或者损失函数来发现新的物理先验</li>
-<li>训练好网络之后图像处理的速度非常高效</li>
-</ul>
-<p>当然,ID-CGANs也存在缺点:</p>
-<ul>
-<li>我们并不了解黑盒的机制,其中的物理无迹可寻</li>
-<li>需要大量数据进行长时间的训练</li>
-<li>生成的图片和原始图片可能存在细节不同,即人工生成的痕迹</li>
-<li>GANs本身的训练是不稳定的,迁移之后不能保证一定会收敛</li>
-</ul>
-<p>后面可以将这个网络修改一下在使之能够作为DhNet运行</p>
-
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人倒腾日记/">个人倒腾日记</a>
     </div>
-    
-  </div>
-  
-    
 
 
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/03/MacOS配置及APP推荐/">
-                    MacOS配置及APP推荐
-                </a>
-            </div>
-        
-        
-    </nav>
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WinPe/">WinPe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
+    </div>
 
-  
-</article>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Image De-raining Using a Conditional Generative Adversarial Network　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/03/03/MacOS配置及APP推荐/" title="上一篇: MacOS配置及APP推荐">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/用WinPe没有管理员权限的问题/">用WinPe没有管理员权限的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/23/TensorFlow学习笔记-1/">TensorFlow学习笔记-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/科研向Atom配置教程/">科研向Atom配置教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/DehazeNet-An-End-to-End-System-for-Single-Image-Haze-Removal/">DehazeNet,An End-to-End System for Single Image Haze Removal</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/Single-Image-Dehazing-via-Multi-scale-Convolutional-Neural-Networks/">Single Image Dehazing via Multi-scale Convolutional Neural Networks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/MacOS配置及APP推荐/">MacOS配置及APP推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/Image-De-raining-Using-a-Conditional-Generative-Adversarial-Network/">Image De-raining Using a Conditional Generative Adversarial Network</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
